@@ -1,8 +1,3 @@
-    /* * {
-        box-sizing: border-box;
-    } */
-
-
       body{
         background-color: hsl(233, 47%, 7%);
         min-height: 100vh;
@@ -22,13 +17,14 @@
   
       .flex-item-left{
         flex: 51.35%;
-        margin: 2.5% 11% 0% 6%;
+        margin: 2.5% 8% 0% 6%;
       }
   
       .flex-item-right {
         flex: 48.65%;
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
+        position: relative;
       }
 
       #img-desktop{
@@ -51,32 +47,30 @@
         color: hsl(277, 64%, 61%);
       }
 
-      .column {
-        float: left;
-        width: 33.33%;
+      .row {
+        display: flex;
+        flex-wrap: wrap;
       }
 
-      .top-container{
+      .column{
+        flex: 33%;
+      }
+
+      .top{
         color: hsl(0, 0%, 100%);
         font-size: 25px;
         font-weight: 700;
         font-family: 'Inter', sans-serif; ;
-        margin-right: -10%;
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
       }
 
-      .bottom-container{
+      .bottom{
         color: hsla(0, 0%, 100%, 0.75);
         text-transform: uppercase;
         font-family: 'Lexend Deca', sans-serif; 
         font-size: smaller;
-        margin-right: -10%;
-        margin-top: 10px;
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
+        margin-top: -15%;
       }
 
       .para{
@@ -84,17 +78,31 @@
         font-weight: 400;
         font-size: 15px;
         color: hsla(0, 0%, 100%, 0.75);
-        margin-bottom: 18%;
+        margin-right: 16%;
+        margin-bottom: 10%;
         line-height: 1.7;
       }
 
-    @media only screen and (max-width: 768px) {
+      .overlay{
+        position: absolute;
+        background: hsl(277, 64%, 61%);
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        opacity: 0.5;
+      }
+
+    @media only screen and (max-width: 576px) {
       #card{
         width: 327px;
         height: 780px;
         margin: 88px 24px;
         flex-direction: column;
         border-radius: 10px;
+        text-align: center;
       }
 
       #img-desktop{
@@ -102,13 +110,14 @@
       }
 
       .flex-item-left{
-        padding: 0px 20px;
+        margin: 10px 32px;
         flex: inherit;
         order: 2;
+        justify-content: center;
+        align-items: center;
       }
 
       .flex-item-right {
-        background-color: dodgerblue;
         flex: inherit;
         order: 1;
         border-top-left-radius: 10px;
@@ -123,4 +132,34 @@
         border-top-right-radius: 10px;
       }
       
+      .header{
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        color: hsl(0, 0%, 100%);
+      }
+
+      .para{
+        margin-top: -10px;
+        margin-right: 0%;
+      }
+
+      .row {
+        flex-direction: column;
+  
+      }
+      
+      .top{
+        margin-top: 4%;
+        font-size: 24px;
+      }
+
+      .bottom{
+        color: hsla(0, 0%, 100%, 0.75);
+        text-transform: uppercase;
+        font-family: 'Lexend Deca', sans-serif; 
+        font-size: smaller;
+        justify-content: space-between;
+        margin-top: -7%;
+      }
     }
